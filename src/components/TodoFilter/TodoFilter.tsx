@@ -1,7 +1,7 @@
 import { FilterOptions } from '../../types/FilterOptions';
 
 type Props = {
-  filterOption: string;
+  filterOption: FilterOptions;
   searchQuery: string;
   onSelectChange: (option: FilterOptions) => void;
   handleSearchQuery: (string: string) => void;

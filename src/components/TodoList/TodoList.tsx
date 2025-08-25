@@ -1,4 +1,5 @@
 import React from 'react';
+import cn from 'classnames';
 
 import { Todo } from '../../types/Todo';
 
@@ -80,14 +81,10 @@ export const TodoList: React.FC<Props> = ({
                 >
                   <span className="icon">
                     <i
-                      className={
-                        currentTodoId === todo.id && isModal
-                          ? 'far fa-eye-slash'
-                          : 'far fa-eye'
-                      }
-                      // {cn('far fa-eye', {
-                      //   '-slash': currentTodoId === todo.id,
-                      // })}
+                      className={cn('far', {
+                        'fa-eye-slash': currentTodoId === todo.id && isModal,
+                        'fa-eye': !(currentTodoId === todo.id && isModal),
+                      })}
                     />
                   </span>
                 </button>
